@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Calculadora de Plazo Fijo</title>
+		 <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet" >
+	  
+	</head>
+	
+	<body>
+	<div class="container"> 
+	
+	<h2 class="py-md-3 mb-md-3 ">Calculadora de Plazo Fijo</h2>
+		<div class="row">
+			<div class="col-md-4 py-3 px-5" id="calculadora">
+				<form method="get" name="calculador">
+
+					<div class="form-group">
+						<label for="">Banco</label>
+						<select class="form-control" id="bco" required>
+							<option value="">Seleccione un banco</option>
+							<option value="19">Santander Rio</option>
+							<option value="20">HSBC</option>
+							<option value="21">Galicia</option>
+							<option value="22">ICBC</option>
+						</select>
+					</div>
+
+					<div class="form-group" >
+						<label for="">Monto a invertir</label> 
+						<input id="capital_invertido" class="form-control" type="text" name="capital_invertido" required>
+					</div>
+					<div class="form-group">
+						<label>Plazo (en días)</label>
+						<input id="plazo_dias" class="form-control" type="text" name="plazo_dias" maxlength="4" required>
+						
+					</div>
+
+					<div class="pt-2 form-group">
+						<button type="submit" class="btn btn-primary py-2" name="calcular" id="calcular">Calcular</button>
+					</div>
+
+				</form>
+			</div>
+			<div id="resultado" class="col-md-3 py-3 px-5" >
+
+				<div class="form-group ">
+					<label>Interés</label>
+					<div class="input-group">
+
+						<div class="input-group-prepend">
+							<span class="input-group-text">$</span>
+						</div>
+						<input class="form-control " type="text" name="ganancia" id="ganancia">
+					</div>
+				</div>
+				<div class="form-group ">
+					<label>Porcentaje</label>
+					<div class="input-group">
+
+						<input class="form-control "  type="text" name="porcentaje" id="porcentaje">
+						<div class="input-group-append ">
+							<span class="input-group-text">%</span>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
+	</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$('#calcular').click(function(e){
+				var porcentaje = $('#bco').val();
+				var capital = $('#capital_invertido').val();
+				var plazo = $('#plazo_dias').val();
+				
+				var interes = capital * plazo / 100 ;
+				var interes_total = interes * porcentaje / 365 ;
+				
+				var resultado = interes_total.toFixed(2); 
+			
+				$('#ganancia'). val(resultado);
+				$('#porcentaje').val(porcentaje);
+					
+				return false;
+			});			
+		});	  
+		
+	</script>	
+	
+  </body>
+</html>
