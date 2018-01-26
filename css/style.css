@@ -15,7 +15,6 @@ h2 {
 
 label{
 	color:#969393;
-
 }
 .small{
 	font-size: 10px;
@@ -26,16 +25,14 @@ label{
 	width: 100%;
 	font-weight: 700;
 }
-#porcentaje{
-	
+#porcentaje{	
 }
-/*Estilp responsive*/
+/*Estilo responsive*/
 
 @media (max-width: 576px) { 
 	h2{ 
 		font-size:24px;
 		padding:15px ;
-		
 	}
 }
 
