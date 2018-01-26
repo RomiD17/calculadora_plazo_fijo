@@ -1,0 +1,50 @@
+h1,h2,h3,p,input,label{
+	font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+	font-weight: 600;
+	color: #17a2b8;
+	border-bottom: 1px solid #cecece;
+}
+
+#calculadora{
+	background-color: #f9f9f9;
+	border-radius: 5px;
+}
+
+label{
+	color:#969393;
+
+}
+.small{
+	font-size: 10px;
+}
+.btn{
+	background-color:#17a2b8!important ;
+	border-color: #17a2b8!important;
+	width: 100%;
+	font-weight: 700;
+}
+#porcentaje{
+	
+}
+/*Estilp responsive*/
+
+@media (max-width: 576px) { 
+	h2{ 
+		font-size:24px;
+		padding:15px ;
+		
+	}
+}
+
+
+@media (max-width: 768px) { 
+
+}
+
+@media (max-width: 992px) { 
+
+
+}
